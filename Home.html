@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/home.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="lightbox.min.css">
+  <link rel="stylesheet" href="css/jquery.dataTables.min.css">
 	<script src="js/lightbox-plus-jquery.min.js"></script>
 </head>
 <body>
@@ -45,9 +46,9 @@
   <div class="row gallery">
     <div class="col-lg-3 text-center">
       <div><div class="part-1">
-        <img src="image/image.f1.webp"  class="picture">
+        <img src="image/img.f3.jpg"  class="picture">
         <h1>MECHANICAL WORKSHOP</h1>
-        <button class="btn">click</button>
+        <button class="btn" id="mw">click</button>
       </div>
     </div>
     </div>
@@ -55,7 +56,7 @@
       <div><div class="part-1">
         <img src="image/image.f3.webp"  class="picture">
         <h1>MATERIAL TESTING</h1>
-        <button class="btn">click</button>
+        <button class="btn" id="mt">click</button>
       </div>
     </div>
     </div>
@@ -63,7 +64,7 @@
       <div><div class="part-1">
         <img src="image/image.f4.jfif"  class="picture">
         <h1>RAC LAB</h1>
-        <button class="btn">click</button>
+        <button class="btn" id="rac">click</button>
       </div>
     </div>
     </div>
@@ -71,7 +72,7 @@
       <div><div class="part-1">
         <img src="image/img.f2.jpg"  class="picture">
         <h1>COMPUTER LAB</h1>
-        <button class="btn">click</button>
+        <button class="btn" id="computer">click</button>
       </div>
     </div>
     </div>
@@ -79,21 +80,603 @@
       <div><div class="part-1">
         <img src="image/image.f1.webp"  class="picture">
         <h1>DYNAMICS LAB</h1>
-        <button class="btn">click</button>
+        <button class="btn" id="dynamic">click</button>
       </div>
     </div>
     </div>
     <div class="col-lg-3 text-center">
       <div><div class="part-1">
-        <img src="image/image.f1.webp"  class="picture">
+        <img src="image/img.f4.jpg"  class="picture">
         <h1>FACULTY ROOM</h1>
-        <button class="btn">click</button>
+        <button class="btn" id="faculty">click</button>
       </div>
     </div>
     </div>
   </div>
   </div>
   </section>
+  <div class="container">
+    <div class="row">
+        <div id="askModal" class="modal fade col-5 offset-md-4" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header  bg-warning"><h5>MECHANICAL WORKSHOP</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="data-table-area container">
+                        
+                        
+                            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="data-table-list">                                       
+                                        <div class="table-responsive">
+                                            <table id="data-table-basic" class="table table-striped">
+                                                <thead class="thead-light">
+                                                    
+                                                    <tr>
+                                                        <th>Item</th>
+                                                        <th>Stock</th>
+                                                        <th>Last DOI</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id="first" class="datainput">
+                                                        <form>
+                                                        <th><input type="text" size="5"></th>
+                                                      
+                                                        <th><input type="number" id="quantity" name="quantity" min="1" max="100"></th>
+                                                        <th><input type="date" id="Last_DOI" name="Last_DOI" ></th>
+                                                        <th><button class="btn" id="update">Add</button></th>
+                                                    </form> 
+                                                    </tr>
+                                                    <tr id="first">                                                        
+                                                        <td>Bolt</td>
+                                                        
+                                                        <th><input type="number" value="50" min="1" max="100"></th>
+                                                        <th><input type="date" value="2017-06-01"/></th>
+                                                        <th><button class="btn" id="update">Update</button></th>
+                                                    </tr>
+                                                    <tr id="first">                                                        
+                                                      <td>Bolt</td>
+                                                    
+                                                      <th><input type="number" value="50" min="1" max="100"></th>
+                                                      <th><input type="date" value="2017-06-01"/></th>
+                                                      <th><button class="btn" id="update">Update</button></th>
+                                                  </tr>
+                                                  <tr id="first">                                                        
+                                                    <td>Bolt</td>
+                                                    
+                                                    <th><input type="number" value="50" min="1" max="100"></th>
+                                                    <th><input type="date" value="2017-06-01"/></th>
+                                                    <th><button class="btn" id="update">Update</button></th>
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                  <td>Bolt</td>
+                                                 
+                                                  <th><input type="number" value="50" min="1" max="100"></th>
+                                                  <th><input type="date" value="2017-06-01"/></th>
+                                                  <th><button class="btn" id="update">Update</button></th>
+                                                </tr>
+
+                                                </tbody>                                                                  
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div id="mtModal" class="modal fade col-5 offset-md-4" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="content">
+              <div class="modal-content">
+                  <div class="modal-header  bg-warning">
+                      <button type="button" class="close" data-dismiss="modal">
+                          &times;
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="data-table-area">
+                      <div class="container">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="data-table-list">                                       
+                                    <div class="table-responsive">
+                                        <table id="data-table-basic" class="table table-striped">
+                                            <thead class="thead-light">
+                                                
+                                                <tr>
+                                                    <th>Item</th>
+                                                    <th>Stock</th>
+                                                    <th>Last DOI</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="first" class="datainput">
+                                                    <form>
+                                                    <th><input type="text" size="5"></th>
+                                                  
+                                                    <th><input type="number" id="quantity" name="quantity" min="1" max="100"></th>
+                                                    <th><input type="date" id="Last_DOI" name="Last_DOI" ></th>
+                                                    <th><button class="btn" id="update">Add</button></th>
+                                                </form> 
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                    <td>Bolt</td>
+                                                    
+                                                    <th><input type="number" value="50" min="1" max="100"></th>
+                                                    <th><input type="date" value="2017-06-01"/></th>
+                                                    <th><button class="btn" id="update">Update</button></th>
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                  <td>Bolt</td>
+                                                
+                                                  <th><input type="number" value="50" min="1" max="100"></th>
+                                                  <th><input type="date" value="2017-06-01"/></th>
+                                                  <th><button class="btn" id="update">Update</button></th>
+                                              </tr>
+                                              <tr id="first">                                                        
+                                                <td>Bolt</td>
+                                                
+                                                <th><input type="number" value="50" min="1" max="100"></th>
+                                                <th><input type="date" value="2017-06-01"/></th>
+                                                <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+                                            <tr id="first">                                                        
+                                              <td>Bolt</td>
+                                             
+                                              <th><input type="number" value="50" min="1" max="100"></th>
+                                              <th><input type="date" value="2017-06-01"/></th>
+                                              <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+
+                                            </tbody>                                                                  
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                         
+                        </div>
+                    </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div id="racModal" class="modal fade col-5 offset-md-4" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="content">
+              <div class="modal-content">
+                  <div class="modal-header  bg-warning">
+                      <button type="button" class="close" data-dismiss="modal">
+                          &times;
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="data-table-area">
+                      <div class="container">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="data-table-list">                                       
+                                    <div class="table-responsive">
+                                        <table id="data-table-basic" class="table table-striped">
+                                            <thead class="thead-light">
+                                                
+                                                <tr>
+                                                    <th>Item</th>
+                                                    <th>Stock</th>
+                                                    <th>Last DOI</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="first" class="datainput">
+                                                    <form>
+                                                    <th><input type="text" size="5"></th>
+                                                  
+                                                    <th><input type="number" id="quantity" name="quantity" min="1" max="100"></th>
+                                                    <th><input type="date" id="Last_DOI" name="Last_DOI" ></th>
+                                                    <th><button class="btn" id="update">Add</button></th>
+                                                </form> 
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                    <td>Bolt</td>
+                                                    
+                                                    <th><input type="number" value="50" min="1" max="100"></th>
+                                                    <th><input type="date" value="2017-06-01"/></th>
+                                                    <th><button class="btn" id="update">Update</button></th>
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                  <td>Bolt</td>
+                                                
+                                                  <th><input type="number" value="50" min="1" max="100"></th>
+                                                  <th><input type="date" value="2017-06-01"/></th>
+                                                  <th><button class="btn" id="update">Update</button></th>
+                                              </tr>
+                                              <tr id="first">                                                        
+                                                <td>Bolt</td>
+                                                
+                                                <th><input type="number" value="50" min="1" max="100"></th>
+                                                <th><input type="date" value="2017-06-01"/></th>
+                                                <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+                                            <tr id="first">                                                        
+                                              <td>Bolt</td>
+                                             
+                                              <th><input type="number" value="50" min="1" max="100"></th>
+                                              <th><input type="date" value="2017-06-01"/></th>
+                                              <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+
+                                            </tbody>                                                                  
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                         
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div id="mtModal" class="modal fade col-5 offset-md-4" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+            <div class="modal-header  bg-warning">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+              <div class="data-table-area">
+                <div class="container">
+                  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                  <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <div class="data-table-list">                                       
+                              <div class="table-responsive">
+                                  <table id="data-table-basic" class="table table-striped">
+                                      <thead class="thead-light">
+                                          
+                                          <tr>
+                                              <th>Item</th>
+                                              <th>Stock</th>
+                                              <th>Last DOI</th>
+                                              <th></th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr id="first" class="datainput">
+                                              <form>
+                                              <th><input type="text" size="5"></th>
+                                            
+                                              <th><input type="number" id="quantity" name="quantity" min="1" max="100"></th>
+                                              <th><input type="date" id="Last_DOI" name="Last_DOI" ></th>
+                                              <th><button class="btn" id="update">Add</button></th>
+                                          </form> 
+                                          </tr>
+                                          <tr id="first">                                                        
+                                              <td>Bolt</td>
+                                              
+                                              <th><input type="number" value="50" min="1" max="100"></th>
+                                              <th><input type="date" value="2017-06-01"/></th>
+                                              <th><button class="btn" id="update">Update</button></th>
+                                          </tr>
+                                          <tr id="first">                                                        
+                                            <td>Bolt</td>
+                                          
+                                            <th><input type="number" value="50" min="1" max="100"></th>
+                                            <th><input type="date" value="2017-06-01"/></th>
+                                            <th><button class="btn" id="update">Update</button></th>
+                                        </tr>
+                                        <tr id="first">                                                        
+                                          <td>Bolt</td>
+                                          
+                                          <th><input type="number" value="50" min="1" max="100"></th>
+                                          <th><input type="date" value="2017-06-01"/></th>
+                                          <th><button class="btn" id="update">Update</button></th>
+                                      </tr>
+                                      <tr id="first">                                                        
+                                        <td>Bolt</td>
+                                       
+                                        <th><input type="number" value="50" min="1" max="100"></th>
+                                        <th><input type="date" value="2017-06-01"/></th>
+                                        <th><button class="btn" id="update">Update</button></th>
+                                      </tr>
+
+                                      </tbody>                                                                  
+                                      </tfoot>
+                                  </table>
+                              </div>
+                          </div>
+                   
+                  </div>
+              </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div id="computerModal" class="modal fade col-5 offset-md-4" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="content">
+              <div class="modal-content">
+                  <div class="modal-header  bg-warning">
+                      <button type="button" class="close" data-dismiss="modal">
+                          &times;
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="data-table-area">
+                      <div class="container">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="data-table-list">                                       
+                                    <div class="table-responsive">
+                                        <table id="data-table-basic" class="table table-striped">
+                                            <thead class="thead-light">
+                                                
+                                                <tr>
+                                                    <th>Item</th>
+                                                    <th>Stock</th>
+                                                    <th>Last DOI</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="first" class="datainput">
+                                                    <form>
+                                                    <th><input type="text" size="5"></th>
+                                                  
+                                                    <th><input type="number" id="quantity" name="quantity" min="1" max="100"></th>
+                                                    <th><input type="date" id="Last_DOI" name="Last_DOI" ></th>
+                                                    <th><button class="btn" id="update">Add</button></th>
+                                                </form> 
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                    <td>Bolt</td>
+                                                    
+                                                    <th><input type="number" value="50" min="1" max="100"></th>
+                                                    <th><input type="date" value="2017-06-01"/></th>
+                                                    <th><button class="btn" id="update">Update</button></th>
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                  <td>Bolt</td>
+                                                
+                                                  <th><input type="number" value="50" min="1" max="100"></th>
+                                                  <th><input type="date" value="2017-06-01"/></th>
+                                                  <th><button class="btn" id="update">Update</button></th>
+                                              </tr>
+                                              <tr id="first">                                                        
+                                                <td>Bolt</td>
+                                                
+                                                <th><input type="number" value="50" min="1" max="100"></th>
+                                                <th><input type="date" value="2017-06-01"/></th>
+                                                <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+                                            <tr id="first">                                                        
+                                              <td>Bolt</td>
+                                             
+                                              <th><input type="number" value="50" min="1" max="100"></th>
+                                              <th><input type="date" value="2017-06-01"/></th>
+                                              <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+
+                                            </tbody>                                                                  
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                         
+                        </div>
+                    </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div id="dynamicModal" class="modal fade col-5 offset-md-4" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="content">
+              <div class="modal-content">
+                  <div class="modal-header  bg-warning">
+                      <button type="button" class="close" data-dismiss="modal">
+                          &times;
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="data-table-area">
+                      <div class="container">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="data-table-list">                                       
+                                    <div class="table-responsive">
+                                        <table id="data-table-basic" class="table table-striped">
+                                            <thead class="thead-light">
+                                                
+                                                <tr>
+                                                    <th>Item</th>
+                                                    <th>Stock</th>
+                                                    <th>Last DOI</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="first" class="datainput">
+                                                    <form>
+                                                    <th><input type="text" size="5"></th>
+                                                  
+                                                    <th><input type="number" id="quantity" name="quantity" min="1" max="100"></th>
+                                                    <th><input type="date" id="Last_DOI" name="Last_DOI" ></th>
+                                                    <th><button class="btn" id="update">Add</button></th>
+                                                </form> 
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                    <td>Bolt</td>
+                                                    
+                                                    <th><input type="number" value="50" min="1" max="100"></th>
+                                                    <th><input type="date" value="2017-06-01"/></th>
+                                                    <th><button class="btn" id="update">Update</button></th>
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                  <td>Bolt</td>
+                                                
+                                                  <th><input type="number" value="50" min="1" max="100"></th>
+                                                  <th><input type="date" value="2017-06-01"/></th>
+                                                  <th><button class="btn" id="update">Update</button></th>
+                                              </tr>
+                                              <tr id="first">                                                        
+                                                <td>Bolt</td>
+                                                
+                                                <th><input type="number" value="50" min="1" max="100"></th>
+                                                <th><input type="date" value="2017-06-01"/></th>
+                                                <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+                                            <tr id="first">                                                        
+                                              <td>Bolt</td>
+                                             
+                                              <th><input type="number" value="50" min="1" max="100"></th>
+                                              <th><input type="date" value="2017-06-01"/></th>
+                                              <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+
+                                            </tbody>                                                                  
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                         
+                        </div>
+                    </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div id="facultyModal" class="modal fade col-5 offset-md-4" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="content">
+              <div class="modal-content">
+                  <div class="modal-header  bg-warning">
+                      <button type="button" class="close" data-dismiss="modal">
+                          &times;
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="data-table-area">
+                      <div class="container">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="data-table-list">                                       
+                                    <div class="table-responsive">
+                                        <table id="data-table-basic" class="table table-striped">
+                                            <thead class="thead-light">
+                                                
+                                                <tr>
+                                                    <th>Item</th>
+                                                    <th>Stock</th>
+                                                    <th>Last DOI</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="first" class="datainput">
+                                                    <form>
+                                                    <th><input type="text" size="5"></th>
+                                                  
+                                                    <th><input type="number" id="quantity" name="quantity" min="1" max="100"></th>
+                                                    <th><input type="date" id="Last_DOI" name="Last_DOI" ></th>
+                                                    <th><button class="btn" id="update">Add</button></th>
+                                                </form> 
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                    <td>Bolt</td>
+                                                    
+                                                    <th><input type="number" value="50" min="1" max="100"></th>
+                                                    <th><input type="date" value="2017-06-01"/></th>
+                                                    <th><button class="btn" id="update">Update</button></th>
+                                                </tr>
+                                                <tr id="first">                                                        
+                                                  <td>Bolt</td>
+                                                
+                                                  <th><input type="number" value="50" min="1" max="100"></th>
+                                                  <th><input type="date" value="2017-06-01"/></th>
+                                                  <th><button class="btn" id="update">Update</button></th>
+                                              </tr>
+                                              <tr id="first">                                                        
+                                                <td>Bolt</td>
+                                                
+                                                <th><input type="number" value="50" min="1" max="100"></th>
+                                                <th><input type="date" value="2017-06-01"/></th>
+                                                <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+                                            <tr id="first">                                                        
+                                              <td>Bolt</td>
+                                             
+                                              <th><input type="number" value="50" min="1" max="100"></th>
+                                              <th><input type="date" value="2017-06-01"/></th>
+                                              <th><button class="btn" id="update">Update</button></th>
+                                            </tr>
+
+                                            </tbody>                                                                  
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                         
+                        </div>
+                    </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+
 
 <footer id="footer">
 	<div class="container">
@@ -121,8 +704,78 @@
 	<p class="copyright">Website crafted by seekh kebab</p>	
 	
 </footer>
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("data-table-basic");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+<script>
+  $(document).ready(function(){
+  $('#mw').click(function(){
+  $('#askModal').modal('show');
+  });
+})
+</script>
+<script>
+$(document).ready(function(){
+  $('#mt').click(function(){
+  $('#mtModal').modal('show');
+  });
+})</script>
+<script>
+  $(document).ready(function(){
+  $('#rac').click(function(){
+  $('#racModal').modal('show');
+  });
+})
+</script>
+<script>
+$(document).ready(function(){
+  $('#computer').click(function(){
+  $('#computerModal').modal('show');
+  });
+})</script>
+<script>
+  $(document).ready(function(){
+  $('#dynamic').click(function(){
+  $('#dynamicModal').modal('show');
+  });
+})
+</script>
+<script>
+$(document).ready(function(){
+  $('#faculty').click(function(){
+  $('#facultyModal').modal('show');
+  });
+})</script>
+<script>
+  $(document).ready(function(){
+    $('#update').click(function(){
+    $('#passModal').modal('show');
+    });
+  })</script>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/data-table/data-table-act.js"></script>
 </body>
 </html>
